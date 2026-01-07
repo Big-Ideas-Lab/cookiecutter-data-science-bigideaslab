@@ -26,6 +26,11 @@ packages_to_install += ['nbstripout']
 packages_to_install += ["awscli"]
 # {% endif %} #
 
+# {% if cookiecutter.dataset_storage.box %}
+packages_to_install += ["boxsdk"]
+# {% endif %} #
+
+
 # {% if cookiecutter.include_code_scaffold == "Yes" %}
 packages_to_install += scaffold
 # {% endif %}
