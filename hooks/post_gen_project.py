@@ -26,6 +26,17 @@ packages_to_install += ['nbstripout']
 packages_to_install += ["awscli"]
 # {% endif %} #
 
+# {% if cookiecutter.dataset_storage.box %}
+packages_to_install += ["boxsdk"]
+
+# {% else %}
+# Remove the box oauth folder with code
+box_path = Path("{{ cookiecutter.module_name }}/utils/box_oauth")
+shutil.rmtree(box_path)
+
+# {% endif %} #
+
+
 # {% if cookiecutter.include_code_scaffold == "Yes" %}
 packages_to_install += scaffold
 # {% endif %}
@@ -115,7 +126,13 @@ Path("pyproject.toml").write_text(pyproject_text.replace(r"\u0027", "'"))
 # remove everything except __init__.py so result is an empty package
 for generated_path in Path("{{ cookiecutter.module_name }}").iterdir():
     if generated_path.is_dir():
-        shutil.rmtree(generated_path)
+        # Leave box oauth utils alone if it is chosen for dataset storage
+        # {% if cookiecutter.dataset_storage.box %}
+        if generated_path.name == 'utils':
+            continue
+        # {% endif %}
+        shutil.rmtree(generated_path)   
+        
     elif generated_path.name != "__init__.py":
         generated_path.unlink()
     elif generated_path.name == "__init__.py":
