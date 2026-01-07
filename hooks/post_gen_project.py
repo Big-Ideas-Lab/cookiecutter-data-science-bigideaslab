@@ -28,12 +28,11 @@ packages_to_install += ["awscli"]
 
 # {% if cookiecutter.dataset_storage.box %}
 packages_to_install += ["boxsdk"]
-
+print('Remember to update Box Client ID and Client Secret in `.env`')
 # {% else %}
 # Remove the box oauth folder with code
 box_path = Path("{{ cookiecutter.module_name }}/utils/box_oauth")
 shutil.rmtree(box_path)
-
 # {% endif %} #
 
 
