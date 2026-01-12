@@ -6,6 +6,14 @@
 
 {{cookiecutter.description}}
 
+## Using Notebooks
+Use the following jupyter notebook magic to make sure latest changes to imported .py files don't require restarting the kernel to take into effect
+
+```Python
+%load_ext autoreload
+%autoreload 2
+```
+
 ## Project Organization
 
 ```
