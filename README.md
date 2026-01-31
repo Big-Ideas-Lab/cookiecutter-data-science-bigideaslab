@@ -25,7 +25,7 @@ pip install cookiecutter-data-science
 To start a new project, run:
 
 ```bash
-ccds https://github.com/hershkovichl/cookiecutter-data-science-bigideaslab -c master
+ccds https://github.com/Big-Ideas-Lab/cookiecutter-data-science-bigideaslab -c master
 ```
 
 Notes:
