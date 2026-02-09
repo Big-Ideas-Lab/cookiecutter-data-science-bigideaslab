@@ -6,6 +6,21 @@
 
 {{cookiecutter.description}}
 
+## Getting started with this repo (all collaborators)
+1. Create your environment (e.g. conda environment) in terminal:
+```bash
+make create_environment
+```
+2. Activate your environment in terminal:
+   
+For example, `conda activate {{ cookiecutter.repo_name }}`
+
+3. Load environment requirements in terminal
+```bash
+make requirements
+```
+
+
 ## Using Notebooks
 Use the following jupyter notebook magic to make sure latest changes to imported .py files don't require restarting the kernel to take into effect
 
