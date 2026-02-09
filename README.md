@@ -32,7 +32,15 @@ Notes:
 * If you don't include the URL to this repo, it will just install the default template from the [original cookiecutter data science](https://github.com/drivendataorg/cookiecutter-data-science).
 * `-c master` refers to the branch of this repo to grab. E.g. if you're testing a new template, you can use the name of that branch.
 
-### 3. Activate the project
+### 3. Initialize your git repo
+```bash
+# From inside your newly created project directory
+git init
+git add .
+git commit -m "CCDS defaults"
+```
+
+### 4. Activate the project
 Once in the new directory for your project, run the following command to create your environment that you specified in the creation process (e.g. conda):
 ```bash
 make create_environment
@@ -52,7 +60,7 @@ make requirements
 ```
 
 
-### 4. Understanding the template
+### 5. Understanding the template
 
 To understand how to fully utilize the template, I recommend you read CCDS's philosophy on their [project homepage](https://cookiecutter-data-science.drivendata.org/). Specifically, I recommend checking out ["Why ccds?"](https://cookiecutter-data-science.drivendata.org/why/) and ["Opinions"](https://cookiecutter-data-science.drivendata.org/opinions/) to understand the motivation.
 
